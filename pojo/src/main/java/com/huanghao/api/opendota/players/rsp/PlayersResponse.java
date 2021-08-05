@@ -1,7 +1,6 @@
 package com.huanghao.api.opendota.players.rsp;
 
-import cn.hutool.json.JSONUtil;
-import com.huanghao.api.opendota.OpenDotaConvert;
+import com.huanghao.api.opendota.AbstractResponse;
 import lombok.Data;
 
 /**
@@ -9,7 +8,7 @@ import lombok.Data;
  * @date 2021/8/5 1:26
  */
 @Data
-public class PlayersResponse implements OpenDotaConvert<PlayersResponse> {
+public class PlayersResponse extends AbstractResponse {
     private String trackedUntil;
     private String soloCompetitiveRank;
     private String competitiveRank;
@@ -17,9 +16,4 @@ public class PlayersResponse implements OpenDotaConvert<PlayersResponse> {
     private Integer leaderboardRank;
     private MmrEstimate mmrEstimate;
     private Profile profile;
-
-    @Override
-    public PlayersResponse convertResultString2Response(String resultString) {
-        return JSONUtil.toBean(resultString, PlayersResponse.class);
-    }
 }

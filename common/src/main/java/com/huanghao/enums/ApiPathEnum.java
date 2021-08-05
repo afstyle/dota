@@ -11,10 +11,12 @@ import lombok.Getter;
 @AllArgsConstructor
 public enum ApiPathEnum {
 
-    MATCHES(    1001, "/matches/%s", "xx"),
+    MATCHES(    1001, "matches/{match_id}", "xx"),
 
-    PLAYERS(    2001, "/players/%s", "xx"),
-    PLAYERS_WL( 2002, "/players/%s/wl", "xx"),
+    PLAYERS(    2001, "players/{account_id}", "xx"),
+    PLAYERS_WL( 2002, "players/{account_id}/wl", "xx"),
+
+    SCHEMA(     9999, "schema", "基础数据表结构"),
     ;
 
 

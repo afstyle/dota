@@ -2,12 +2,15 @@ package com.huanghao.controller;
 
 import com.huanghao.Result;
 import com.huanghao.api.client.OpenDotaApiClient;
+import com.huanghao.api.client.OpenDotaApiClientImpl;
+import com.huanghao.api.opendota.playerswl.req.PlayersWlRequest;
 import com.huanghao.api.opendota.playerswl.rsp.PlayersWlResponse;
 import com.huanghao.constants.ApiConstant;
-import com.huanghao.enums.ApiPathEnum;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import javax.annotation.Resource;
 
 /**
  * @author HuangHao
@@ -17,11 +20,19 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("")
 public class TestController {
 
+    @GetMapping("/ping")
+    public String ping() {
+        return "ok";
+    }
+
+
     @GetMapping("/test")
     public Result test() {
+        OpenDotaApiClient client = new OpenDotaApiClientImpl(ApiConstant.MY_ACCOUNT_ID);
 
-        final String s = OpenDotaApiClient.get(ApiPathEnum.PLAYERS_WL, ApiConstant.MY_ACCOUNT_ID, null);
-        PlayersWlResponse playersBean = new PlayersWlResponse().convertResultString2Response(s);
-        return Result.ok(playersBean);
+        PlayersWlRequest playersWlRequest = new PlayersWlRequest();
+        playersWlRequest.setLimit(10);
+        PlayersWlResponse response = client.execute(playersWlRequest);
+        return Result.ok(response);
     }
 }
