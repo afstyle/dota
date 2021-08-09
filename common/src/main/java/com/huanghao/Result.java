@@ -1,6 +1,7 @@
 package com.huanghao;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.huanghao.enums.ErrorEnum;
 
 /**
  * 
@@ -51,6 +52,13 @@ public class Result {
     
     public static Result errorMsg(String message) {
         return new Result(500, message, null);
+    }
+
+    public static Result error(ErrorEnum errorEnum) {
+        return new Result(errorEnum.getCode(), errorEnum.getMessage(), null);
+    }
+    public static Result error(ErrorEnum errorEnum, String message) {
+        return new Result(errorEnum.getCode(), message, null);
     }
     
     public static Result errorMap(Object data) {
