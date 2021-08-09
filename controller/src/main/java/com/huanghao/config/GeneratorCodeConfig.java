@@ -69,13 +69,13 @@ public class GeneratorCodeConfig {
 
         // 包配置
         PackageConfig pc = new PackageConfig();
-        pc.setParent("com.huanghao.demo");
+        pc.setParent("com.huanghao");
         pc.setController("controller");
         pc.setService("service");
         pc.setServiceImpl("service.impl");
-        pc.setMapper("dao");
-        pc.setEntity("model");
-        pc.setXml("mapper");
+        pc.setMapper("mapper");
+        pc.setEntity("pojo");
+        pc.setXml("xml");
         mpg.setPackageInfo(pc);
 
         // 执行生成

@@ -12,8 +12,9 @@ import java.util.HashMap;
 @AllArgsConstructor
 @Getter
 public enum ErrorEnum {
-    COMMON_ERROR(1000, "请求错误，请稍后重试！"),
-    PARAM_ERROR(1001, "传参不正确"),
+    NO_AUTH(9999, "用户未登陆"),
+    COMMON_ERROR(1001, "请求错误，请稍后重试！"),
+    PARAM_ERROR(1002, "传参不正确"),
     ;
 
     private Integer code;

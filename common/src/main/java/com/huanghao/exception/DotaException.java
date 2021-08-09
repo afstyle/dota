@@ -15,9 +15,9 @@ public class DotaException extends RuntimeException {
         this.errorEnum = errorEnum;
     }
 
-    public DotaException(Integer code, String message) {
+    public DotaException(ErrorEnum errorEnum, String message) {
         super(message);
-        this.errorEnum = ErrorEnum.getErrorEnumByCode(code);
+        this.errorEnum = errorEnum;
     }
 
     public ErrorEnum getErrorEnum() {
