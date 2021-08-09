@@ -19,10 +19,8 @@ import java.util.Map;
 public class OpenDotaApiClientImpl implements OpenDotaApiClient {
 
     private static final Integer TIMEOUT = 1000;
-
     private Long accountId;
     private Long matchId;
-
 
     public OpenDotaApiClientImpl(Long accountId, Long matchId) {
         this.accountId = accountId;
@@ -32,7 +30,6 @@ public class OpenDotaApiClientImpl implements OpenDotaApiClient {
     public OpenDotaApiClientImpl(Long accountId) {
         this.accountId = accountId;
     }
-
 
     @Override
     public <T extends AbstractResponse> T execute(OpenDotaRequest<T> request) {
@@ -57,9 +54,11 @@ public class OpenDotaApiClientImpl implements OpenDotaApiClient {
             return this.parseObj(rsp, responseClass);
         }
     }
+
     private <T extends AbstractResponse> T parseObj(String rsp, Class<T> responseClass) {
         return JSONUtil.toBean(rsp, responseClass);
     }
+
     private <T extends AbstractResponse> List<T> parseList(String rsp, Class<T> responseClass) {
         return JSONUtil.toList(rsp, responseClass);
     }
