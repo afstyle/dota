@@ -11,7 +11,7 @@ import java.io.Serializable;
  * </p>
  *
  * @author HuangHao
- * @since 2021-08-10
+ * @since 2021-08-12
  */
 public class BUser implements Serializable {
 
@@ -47,6 +47,11 @@ public class BUser implements Serializable {
      * 角色：0-普通用户，1-管理员，2-超级管理员
      */
     private Integer role;
+
+    /**
+     * 头像地址
+     */
+    private String headImg;
 
     /**
      * 创建时间
@@ -112,6 +117,14 @@ public class BUser implements Serializable {
         this.role = role;
     }
 
+    public String getHeadImg() {
+        return headImg;
+    }
+
+    public void setHeadImg(String headImg) {
+        this.headImg = headImg;
+    }
+
     public LocalDateTime getCreateTime() {
         return createTime;
     }
@@ -145,6 +158,7 @@ public class BUser implements Serializable {
         ", nickname=" + nickname +
         ", gender=" + gender +
         ", role=" + role +
+        ", headImg=" + headImg +
         ", createTime=" + createTime +
         ", updateTime=" + updateTime +
         ", deleteFlag=" + deleteFlag +

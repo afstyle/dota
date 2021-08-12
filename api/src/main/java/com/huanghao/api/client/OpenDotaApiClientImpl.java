@@ -4,7 +4,7 @@ import cn.hutool.http.HttpUtil;
 import cn.hutool.json.JSONUtil;
 import com.huanghao.api.opendota.AbstractResponse;
 import com.huanghao.api.opendota.OpenDotaRequest;
-import com.huanghao.constants.ApiConstant;
+import com.huanghao.constant.ApiConstant;
 import com.huanghao.enums.ApiPathEnum;
 import lombok.extern.slf4j.Slf4j;
 

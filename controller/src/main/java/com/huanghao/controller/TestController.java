@@ -5,12 +5,10 @@ import com.huanghao.api.client.OpenDotaApiClient;
 import com.huanghao.api.client.OpenDotaApiClientImpl;
 import com.huanghao.api.opendota.playerswl.req.PlayersWlRequest;
 import com.huanghao.api.opendota.playerswl.rsp.PlayersWlResponse;
-import com.huanghao.constants.ApiConstant;
+import com.huanghao.constant.ApiConstant;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import javax.annotation.Resource;
 
 /**
  * @author HuangHao

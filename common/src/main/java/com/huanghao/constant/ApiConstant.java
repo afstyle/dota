@@ -1,4 +1,4 @@
-package com.huanghao.constants;
+package com.huanghao.constant;
 
 /**
  * @author HuangHao

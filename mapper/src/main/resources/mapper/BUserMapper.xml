@@ -10,6 +10,7 @@
         <result column="nickname" property="nickname" />
         <result column="gender" property="gender" />
         <result column="role" property="role" />
+        <result column="head_img" property="headImg" />
         <result column="create_time" property="createTime" />
         <result column="update_time" property="updateTime" />
         <result column="delete_flag" property="deleteFlag" />

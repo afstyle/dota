@@ -15,7 +15,9 @@ public class LoginBO {
     @NotBlank
     @Length(max = 20)
     private String username;
+
     @NotBlank
     @Length(max = 20)
     private String password;
+
 }

@@ -4,7 +4,6 @@ import com.huanghao.api.opendota.AbstractRequest;
 import com.huanghao.api.opendota.OpenDotaRequest;
 import com.huanghao.api.opendota.playerswl.rsp.PlayersWlResponse;
 import com.huanghao.enums.ApiPathEnum;
-import lombok.Builder;
 import lombok.Data;
 
 import java.util.Map;
